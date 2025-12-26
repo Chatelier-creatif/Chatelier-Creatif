@@ -179,3 +179,10 @@ footer {
   background-color: #f3e1d8;
   margin-top: 50px;
 }
+
+.product-img {
+  width: 300px;       /* largeur fixe */
+  height: auto;       /* conserve les proportions */
+  border-radius: 10px; /* optionnel : coins arrondis */
+  margin-bottom: 15px; /* espace sous l'image */
+}
