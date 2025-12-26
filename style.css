@@ -181,7 +181,7 @@ footer {
 }
 
 .product-img {
-  width: 300px;       /* largeur fixe */
+  width: 30px;       /* largeur fixe */
   height: auto;       /* conserve les proportions */
   border-radius: 10px; /* optionnel : coins arrondis */
   margin-bottom: 15px; /* espace sous l'image */
