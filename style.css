@@ -52,7 +52,7 @@ a {
 }
 
 .top-bar .logo img {
-  max-height: 70px;
+  max-height: 50px;
   border-radius: 50%; /* logo rond */
   object-fit: cover;
 }
@@ -63,8 +63,8 @@ a {
 }
 
 .top-bar .social-icons img {
-  height: 36px;  /* icônes agrandies */
-  width: 36px;
+  height: 40px;  /* icônes agrandies */
+  width: 40px;
   transition: transform 0.3s;
 }
 
