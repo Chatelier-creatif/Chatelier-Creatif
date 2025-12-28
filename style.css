@@ -52,7 +52,7 @@ a {
 }
 
 .top-bar .logo img {
-  max-height: 50px;
+  max-height: 70px;
   border-radius: 50%; /* logo rond */
   object-fit: cover;
 }
@@ -63,8 +63,8 @@ a {
 }
 
 .top-bar .social-icons img {
-  height: 40px;  /* icônes agrandies */
-  width: 40px;
+  height: 36px;  /* icônes agrandies */
+  width: 36px;
   transition: transform 0.3s;
 }
 
@@ -72,7 +72,9 @@ a {
   transform: scale(1.3);
 }
 
-/* Menu principal */
+/* -----------------------
+   Menu principal
+----------------------- */
 .main-nav {
   background-color: #efe9e1;
   padding: 10px 5%;
@@ -101,11 +103,10 @@ a {
   color: #c97c5d;
 }
 
-/* Dropdown */
 .dropdown-menu {
-  display: none; /* caché par défaut */
+  display: none;
   position: absolute;
-  top: 100%; /* juste sous le parent */
+  top: 100%;
   left: 0;
   background-color: #f9f6f2;
   min-width: 180px;
@@ -127,29 +128,8 @@ a {
   color: #c97c5d;
 }
 
-/* Affichage au survol du parent */
 .dropdown:hover .dropdown-menu {
   display: block;
-}
-
-/* Responsive mobile simple */
-@media (max-width: 768px) {
-  .nav-list {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    padding-left: 15px;
-    border-radius: 0;
-    display: none; /* on peut gérer le toggle via JS si besoin */
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display: none; /* on cache le hover sur mobile */
-  }
 }
 
 /* -----------------------
@@ -188,10 +168,6 @@ a {
   padding: 80px 10%;
 }
 
-.section.alt {
-  background-color: #efe9e1;
-}
-
 .section h2 {
   font-size: 2.2rem;
   margin-bottom: 20px;
@@ -209,7 +185,7 @@ a {
 ----------------------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
@@ -230,41 +206,12 @@ a {
   max-width: 100%;
   border-radius: 12px;
   margin-bottom: 15px;
+  cursor: pointer;
 }
 
 .card h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-}
-
-/* -----------------------
-   Étapes / Steps
------------------------ */
-.steps {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  text-align: center;
-}
-
-.steps h3 {
-  margin-bottom: 10px;
-  font-size: 1.3rem;
-}
-
-/* -----------------------
-   À propos
------------------------ */
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-content img {
-  max-width: 100%;
-  border-radius: 20px;
 }
 
 /* -----------------------
@@ -314,8 +261,21 @@ footer {
     padding: 60px 7%;
   }
 
-  .about-content {
-    grid-template-columns: 1fr;
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 15px;
+    display: none; /* hover désactivé sur mobile */
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* une colonne sur mobile */
   }
 
   .top-bar .logo img {
