@@ -1,4 +1,36 @@
 /* -----------------------
+   Bandeau supérieur
+----------------------- */
+.top-bar {
+  background-color: #c97c5d; /* terracotta clair */
+  padding: 10px 5%;
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar .logo img {
+  max-height: 50px;
+}
+
+.top-bar .social-icons a {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+.top-bar .social-icons img {
+  height: 28px;
+  width: 28px;
+  transition: transform 0.3s;
+}
+
+.top-bar .social-icons img:hover {
+  transform: scale(1.2);
+}
+/* -----------------------
    Base & Reset
 ----------------------- */
 * {
