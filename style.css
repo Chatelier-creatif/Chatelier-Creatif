@@ -72,48 +72,45 @@ a {
   transform: scale(1.3);
 }
 
-/* -----------------------
-   Menu principal
------------------------ */
+/* Menu principal */
 .main-nav {
-  background-color: #efe9e1; /* beige clair pour le menu */
+  background-color: #efe9e1;
   padding: 10px 5%;
 }
 
-.main-nav ul {
+.nav-list {
   list-style: none;
   display: flex;
   justify-content: center;
-  align-items: center;
   gap: 30px;
 }
 
-.main-nav ul li {
+.nav-list li {
   position: relative;
 }
 
-.main-nav ul li a {
+.nav-list a {
+  text-decoration: none;
   color: #3b3b3b;
   font-weight: 600;
   padding: 8px 12px;
-  transition: color 0.3s;
+  display: block;
 }
 
-.main-nav ul li a:hover {
-  color: #c97c5d; /* terracotta */
+.nav-list a:hover {
+  color: #c97c5d;
 }
 
-/* Dropdown corrigé */
+/* Dropdown */
 .dropdown-menu {
-  display: none;  /* par défaut caché */
+  display: none; /* caché par défaut */
   position: absolute;
-  top: 35px;
+  top: 100%; /* juste sous le parent */
   left: 0;
   background-color: #f9f6f2;
-  padding: 10px 0;
+  min-width: 180px;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  min-width: 180px;
   z-index: 100;
 }
 
@@ -122,30 +119,36 @@ a {
 }
 
 .dropdown-menu li a {
-  color: #3b3b3b;
   font-weight: normal;
+  color: #3b3b3b;
 }
 
 .dropdown-menu li a:hover {
   color: #c97c5d;
 }
 
-/* Afficher le menu uniquement au hover du parent */
-.main-nav ul li.dropdown:hover > .dropdown-menu {
+/* Affichage au survol du parent */
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Responsive */
+/* Responsive mobile simple */
 @media (max-width: 768px) {
-  .main-nav ul {
+  .nav-list {
     flex-direction: column;
-    gap: 10px;
+    align-items: flex-start;
   }
+
   .dropdown-menu {
     position: static;
     box-shadow: none;
+    padding-left: 15px;
     border-radius: 0;
-    padding-left: 20px;
+    display: none; /* on peut gérer le toggle via JS si besoin */
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: none; /* on cache le hover sur mobile */
   }
 }
 
