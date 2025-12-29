@@ -338,3 +338,46 @@ footer {
     width: 32px;
   }
 }
+/* -----------------------
+   Carte "création sur mesure"
+----------------------- */
+.process-card {
+  background-color: #ffffff;
+  border-radius: 24px;
+  padding: 60px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.process-card h2 {
+  font-size: 2.4rem;
+  margin-bottom: 50px;
+}
+
+/* Grille */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+/* Élément */
+.process-item img {
+  width: 80px;          /* 🔥 images petites */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.process-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.process-item p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
