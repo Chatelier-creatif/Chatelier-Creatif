@@ -269,7 +269,7 @@ a {
    Call to Action
 ----------------------- */
 .cta {
-  background-color: #3b3b3b;
+  background-color: #efe9e1; /* même teinte que le haut */
   color: #fff;
   text-align: center;
   padding: 80px 20px;
@@ -289,8 +289,8 @@ a {
    Footer
 ----------------------- */
 footer {
-  background-color: #efe9e1; /* même teinte que le haut */
-  color: #3b3b3b;
+  background-color: #3b3b3b;
+  color: #efe9e1;
   text-align: center;
   padding: 25px;
   font-size: 0.9rem;
