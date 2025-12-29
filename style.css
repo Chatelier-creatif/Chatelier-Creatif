@@ -37,7 +37,7 @@ a {
 
 .btn {
   display: inline-block;
-  background-color: #c97c5d; /* terracotta */
+  background-color: #c97c5d;
   color: #fff;
   padding: 14px 28px;
   border-radius: 30px;
@@ -48,13 +48,30 @@ a {
 .btn:hover {
   background-color: #b56f53;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #efe9e1;
+  color: #3b3b3b;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f1e6da;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* -----------------------
    Bandeau supérieur
 ----------------------- */
 .top-bar {
-  background-color: #3b3b3b; /* même couleur que le footer */
+  background-color: #3b3b3b;
   padding: 10px 5%;
 }
 
@@ -78,11 +95,12 @@ a {
 .top-bar .social-icons img {
   height: 36px;
   width: 36px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .top-bar .social-icons img:hover {
   transform: scale(1.3);
+  filter: brightness(1.2);
 }
 
 /* -----------------------
@@ -227,6 +245,12 @@ a {
   object-fit: cover;
   border-radius: 14px;
   margin-bottom: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .product-card h2, .product-card h3 {
@@ -245,7 +269,7 @@ a {
    Call to Action
 ----------------------- */
 .cta {
-  background-color: #3b3b3b; /* vert foncé pour rester cohérent avec le bandeau */
+  background-color: #3b3b3b;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
