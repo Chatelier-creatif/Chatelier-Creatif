@@ -107,7 +107,7 @@ a {
    Menu principal
 ----------------------- */
 .main-nav {
-  background-color: #efe9e1;
+  background-color: #3b3b3b;
   padding: 10px 5%;
 }
 
@@ -124,7 +124,7 @@ a {
 
 .nav-list a {
   text-decoration: none;
-  color: #3b3b3b;
+   color: #efe9e1;
   font-weight: 600;
   padding: 8px 12px;
   display: block;
