@@ -37,19 +37,50 @@ h1, h2, h3 {
 /* =====================
    TOP BAR
 ===================== */
+
+/* =====================
+   TOP BAR (compact & clean)
+===================== */
 .top-bar {
   background: #efe9e1;
-  padding: 10px 5%;
+  padding: 6px 5%;              /* ⬅️ réduit la hauteur */
+}
+
+.top-bar .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.top-bar .logo img {
+  max-height: 52px;             /* ⬅️ logo plus discret */
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Réseaux sociaux */
+.social-icons {
+  display: flex;                /* ⬅️ FORCEMENT sur une ligne */
+  align-items: center;
+  gap: 12px;                    /* espace régulier */
+}
+
+.social-icons a {
+  display: inline-flex;
 }
 
 .social-icons img {
-  width: 34px;
-  margin-left: 12px;
-  transition: transform 0.3s;
+  width: 28px;                  /* ⬅️ plus élégant */
+  height: 28px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 .social-icons img:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
+  opacity: 0.85;
 }
 
 /* =====================
