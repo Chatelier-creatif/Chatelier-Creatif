@@ -1,11 +1,11 @@
-/* =====================
+/* =================================================
    FONTS
-===================== */
+================================================= */
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Lato:wght@400;700&display=swap');
 
-/* =====================
-   BASE
-===================== */
+/* =================================================
+   RESET & BASE
+================================================= */
 * {
   margin: 0;
   padding: 0;
@@ -14,36 +14,90 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #f9f6f2;
+  background-color: #f9f6f2;
   color: #3b3b3b;
   line-height: 1.7;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =================================================
+   TYPOGRAPHIE – HIÉRARCHIE CLAIRE
+================================================= */
 h1, h2, h3 {
   font-family: 'Amatic SC', cursive;
+  letter-spacing: 1px;
 }
 
-/* =====================
-   LAYOUT
-===================== */
-.container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+h1 {
+  font-size: 3.8rem;
+  margin-bottom: 20px;
 }
 
-/* =====================
-   TOP BAR
-===================== */
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
 
-/* =====================
-   TOP BAR (compact & clean)
-===================== */
+h3 {
+  font-size: 1.5rem;
+}
+
+/* =================================================
+   BOUTONS (SIGNATURE)
+================================================= */
+.btn {
+  display: inline-block;
+  background-color: #c97c5d;
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #b56f53;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #efe9e1;
+  color: #3b3b3b;
+  padding: 12px 26px;
+  border-radius: 26px;
+  font-weight: 600;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #e4dccf;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* =================================================
+   TOP BAR (COMPACT & PRO)
+================================================= */
 .top-bar {
-  background: #efe9e1;
-  padding: 6px 5%;              /* ⬅️ réduit la hauteur */
+  background-color: #efe9e1;
+  padding: 6px 5%;
 }
 
 .top-bar .container {
@@ -54,26 +108,19 @@ h1, h2, h3 {
   justify-content: space-between;
 }
 
-/* Logo */
 .top-bar .logo img {
-  max-height: 52px;             /* ⬅️ logo plus discret */
-  width: auto;
+  max-height: 52px;
   border-radius: 50%;
 }
 
-/* Réseaux sociaux */
 .social-icons {
-  display: flex;                /* ⬅️ FORCEMENT sur une ligne */
+  display: flex;
   align-items: center;
-  gap: 12px;                    /* espace régulier */
-}
-
-.social-icons a {
-  display: inline-flex;
+  gap: 12px;
 }
 
 .social-icons img {
-  width: 28px;                  /* ⬅️ plus élégant */
+  width: 28px;
   height: 28px;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
@@ -83,97 +130,215 @@ h1, h2, h3 {
   opacity: 0.85;
 }
 
-/* =====================
-   NAV
-===================== */
+/* =================================================
+   NAVIGATION
+================================================= */
 .main-nav {
-  background: #3b3b3b;
+  background-color: #3b3b3b;
 }
 
 .nav-list {
+  list-style: none;
   display: flex;
   justify-content: center;
-  list-style: none;
+}
+
+.nav-list li {
+  position: relative;
 }
 
 .nav-list a {
   color: #efe9e1;
-  padding: 15px;
+  padding: 14px 18px;
+  font-weight: 600;
   display: block;
+}
+
+.nav-list a:hover {
+  color: #c97c5d;
 }
 
 .dropdown-menu {
   display: none;
   position: absolute;
-  background: #fff;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  z-index: 100;
+}
+
+.dropdown-menu li a {
+  color: #3b3b3b;
+  padding: 10px 16px;
+}
+
+.dropdown-menu li a:hover {
+  color: #c97c5d;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* =====================
+/* =================================================
    HERO
-===================== */
+================================================= */
 .hero {
-  min-height: 80vh;
-  background: url("images/hero.jpg") center/cover no-repeat;
+  min-height: 70vh;
+  background: linear-gradient(
+      rgba(249, 246, 242, 0.85),
+      rgba(249, 246, 242, 0.85)
+    ),
+    url("images/hero.jpg") center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  animation: softZoom 20s infinite alternate;
-}
-
-@keyframes softZoom {
-  from { background-size: 100%; }
-  to { background-size: 105%; }
+  padding: 60px 20px;
 }
 
 .hero-content {
-  background: rgba(249,246,242,0.85);
-  padding: 40px;
-  border-radius: 20px;
+  max-width: 720px;
+  padding: 45px;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 28px;
 }
 
-/* =====================
+.hero h1 {
+  font-size: 4.2rem;
+}
+
+.hero h2 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  color: #6b6b6b;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  color: #6b6b6b;
+  margin-bottom: 30px;
+}
+
+/* =================================================
    SECTIONS
-===================== */
+================================================= */
 .section {
   padding: 80px 10%;
 }
 
+.intro {
+  max-width: 720px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+/* =================================================
+   GRILLE PRODUITS
+================================================= */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .product-card {
-  background: #fff;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 20px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.14);
 }
 
-/* =====================
+.product-card img {
+  width: 100%;
+  max-width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 auto 16px;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* =================================================
+   CARTES SPÉCIALES
+================================================= */
+.process-card,
+.about-card {
+  background-color: #ffffff;
+  border-radius: 28px;
+  padding: 60px 50px;
+  max-width: 1100px;
+  margin: auto;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.process-item img {
+  width: 80px;
+  margin: 0 auto 20px;
+}
+
+/* =================================================
+   ABOUT HOME
+================================================= */
+.about-home {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-image img {
+  max-width: 380px;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+/* =================================================
    CTA
-===================== */
+================================================= */
 .cta {
-  background: #efe9e1;
+  background-color: #efe9e1;
   text-align: center;
   padding: 80px 20px;
 }
 
-/* =====================
-   ANIMATIONS
-===================== */
+/* =================================================
+   FOOTER
+================================================= */
+footer {
+  background-color: #3b3b3b;
+  color: #efe9e1;
+  text-align: center;
+  padding: 25px;
+  font-size: 0.9rem;
+}
+
+/* =================================================
+   ANIMATIONS SCROLL
+================================================= */
 .fade-in,
 .slide-left,
 .slide-right {
@@ -198,17 +363,24 @@ h1, h2, h3 {
   transform: translate(0);
 }
 
+/* =================================================
+   RESPONSIVE
+================================================= */
 @media (max-width: 768px) {
-  .top-bar {
-    padding: 8px 5%;
+  h1 {
+    font-size: 3rem;
   }
 
-  .top-bar .logo img {
-    max-height: 46px;
+  .hero h1 {
+    font-size: 3.2rem;
   }
 
-  .social-icons img {
-    width: 26px;
-    height: 26px;
+  .about-home {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .section {
+    padding: 60px 7%;
   }
 }
