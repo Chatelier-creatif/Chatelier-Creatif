@@ -85,6 +85,23 @@ p {
   margin-top: 30px;
 }
 
+.btn-etsy {
+  display: inline-block;
+  background-color: #F16521; /* orange Etsy */
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+  font-size: 16px;
+}
+
+.btn-etsy:hover {
+  background-color: #d35400; /* un orange un peu plus foncé au hover */
+  transform: translateY(-2px);
+}
+
 /* =================================================
    TOP BAR
 ================================================= */
