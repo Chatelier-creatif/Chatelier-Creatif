@@ -272,47 +272,25 @@ p {
    GRILLE PRODUITS / GNOMES
 ================================================= */
 .products-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center; /* centrer les cartes si écran large */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .product-card {
-  flex: 0 1 220px; /* largeur fixe de la carte, mais flexible */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
   text-align: center;
-  text-decoration: none;
-  color: inherit;
-  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-  transform: translateY(-5px); /* effet léger au survol */
-}
-
-/* Bouton découvrir */
-.btn-discover {
-  position: absolute;
-  bottom: 20px; /* distance depuis le bas de la carte */
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 8px 16px;
-  background-color: #f16521; /* couleur Etsy */
-  color: #fff;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  opacity: 0; /* invisible par défaut */
-  transition: opacity 0.3s;
-  pointer-events: none; /* empêche le bouton de bloquer le clic sur la carte */
-}
-
-.product-card:hover .btn-discover {
-  opacity: 1; /* devient visible au survol */
-  pointer-events: auto; /* permet de cliquer si besoin */
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.14);
 }
 
 /* 🔒 TAILLES IMAGE STABLES */
