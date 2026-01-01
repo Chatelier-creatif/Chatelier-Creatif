@@ -445,8 +445,8 @@ footer {
 .product-image {
   position: relative;
   width: 100%;
-  max-width: 600px; /* ← ici tu augmentes la largeur max de l'image principale */
-  height: 450px;    /* ← ici tu augmentes la hauteur de l'image principale */
+  max-width: 700px; /* ← ici tu augmentes la largeur max de l'image principale */
+  height: 700px;    /* ← ici tu augmentes la hauteur de l'image principale */
 }
 
 /* Image principale */
