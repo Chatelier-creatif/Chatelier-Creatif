@@ -85,9 +85,23 @@ p {
   margin-top: 30px;
 }
 
+.purchase-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* espace entre le prix et le bouton */
+  margin-top: 20px;
+  flex-wrap: wrap; /* responsive mobile */
+}
+
+.price {
+  font-size: 24px; /* plus grand pour attirer l’œil */
+  font-weight: 700;
+  color: #F16521; /* couleur Etsy pour visibilité */
+}
+
 .btn-etsy {
   display: inline-block;
-  background-color: #F16521; /* orange Etsy */
+  background-color: #F16521;
   color: #fff;
   font-weight: 600;
   text-decoration: none;
@@ -95,11 +109,10 @@ p {
   border-radius: 8px;
   transition: background-color 0.3s, transform 0.2s;
   font-size: 16px;
-  margin-top: 20px; /* espace avec le reste du texte */
 }
 
 .btn-etsy:hover {
-  background-color: #d35400; /* orange un peu plus foncé au hover */
+  background-color: #d35400;
   transform: translateY(-2px);
 }
 
@@ -292,20 +305,6 @@ p {
 .product-card p {
   font-size: 0.95rem;
   color: #666;
-}
-
-.purchase-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 20px;        /* espace entre le prix et le bouton */
-  margin-top: 20px;
-  flex-wrap: wrap;   /* pour que le bouton descende sur mobile si nécessaire */
-}
-
-.price {
-  font-size: 24px;  /* plus grand pour attirer l’œil */
-  font-weight: 700;
-  color: #F16521;   /* couleur orange Etsy */
 }
 
 /* =================================================
