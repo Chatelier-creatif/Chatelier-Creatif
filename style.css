@@ -95,11 +95,11 @@ p {
   border-radius: 8px;
   transition: background-color 0.3s, transform 0.2s;
   font-size: 16px;
-  margin-top: 20px; /* espace au-dessus */
+  margin-top: 20px; /* espace avec le reste du texte */
 }
 
 .btn-etsy:hover {
-  background-color: #d35400;
+  background-color: #d35400; /* orange un peu plus foncé au hover */
   transform: translateY(-2px);
 }
 
