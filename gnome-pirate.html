@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Jolly – Le Gnome Pirate | Le Cha'Telier Créatif</title>
+  <meta name="description" content="Jolly, le gnome pirate fait main. Une création artisanale personnalisée, idéale pour un cadeau unique et original." />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <img src="images/logo_rond.png" alt="Le Cha'Telier Créatif">
+        </a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/chatelier.creatif/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
+        <a href="https://www.etsy.com/fr/shop/LeChaTelierCreatif" target="_blank"><img src="images/etsy.png" alt="Etsy"></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="main-nav">
+    <ul class="nav-list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="creations.html">Mes créations</a></li>
+      <li><a href="a-propos.html">À propos</a></li>
+      <li><a href="me-contacter.html">Me contacter</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO PRODUIT -->
+  <header class="hero">
+    <div class="hero-content fade-in">
+      <h1>Jolly</h1>
+      <h2>Le Gnome Pirate</h2>
+      <p>Un compagnon intrépide, prêt à voguer vers de nouvelles aventures.</p>
+    </div>
+  </header>
+
+  <!-- PRODUIT -->
+  <section class="section">
+    <div class="two-columns">
+
+      <!-- CARROUSEL -->
+      <div class="carousel fade-in">
+        <div class="carousel-track">
+          <img src="images/gnome-pirate-1.jpg" alt="Gnome pirate Jolly – vue 1">
+          <img src="images/gnome-pirate-2.jpg" alt="Gnome pirate Jolly – vue 2">
+          <video src="images/gnome-pirate-video.mp4" muted autoplay loop></video>
+        </div>
+
+        <div class="carousel-controls">
+          <button class="prev">‹</button>
+          <button class="next">›</button>
+        </div>
+      </div>
+
+      <!-- TEXTE -->
+      <div class="fade-in">
+        <h3>Un gnome pas comme les autres</h3>
+
+        <p>
+          <strong>Jolly</strong> est un gnome pirate entièrement <strong>fait main</strong>,
+          imaginé et confectionné dans mon atelier en France. Avec son bandana,
+          son regard malicieux et son esprit aventurier, il apporte une touche
+          originale et pleine de caractère à votre décoration.
+        </p>
+
+        <p>
+          Chaque gnome est réalisé avec soin, en petite série, et peut être
+          personnalisé selon vos envies. Parfait pour un cadeau unique,
+          une décoration à thème ou simplement pour faire plaisir.
+        </p>
+
+        <ul class="values-list">
+          <li>✔ Création artisanale française</li>
+          <li>✔ Fait main avec amour</li>
+          <li>✔ Objet décoratif unique</li>
+        </ul>
+
+        <div class="btn-container">
+          <a href="https://www.etsy.com/fr/shop/LeChaTelierCreatif" target="_blank" class="btn">
+            Acheter Jolly sur Etsy
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta fade-in">
+    <h2>Envie d’un gnome personnalisé ?</h2>
+    <p>Contactez-moi pour créer un personnage unique, à votre image.</p>
+    <a href="me-contacter.html" class="btn">Me contacter</a>
+  </section>
+
+  <footer>
+    <p>© Le Cha'Telier Créatif – Créations artisanales faites main en France.</p>
+  </footer>
+
+  <!-- JS CARROUSEL -->
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+    let index = 0;
+
+    function updateCarousel() {
+      track.style.transform = 'translateX(-' + index * 100 + '%)';
+    }
+
+    nextButton.addEventListener('click', () => {
+      index = (index + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      index = (index - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+  </script>
+
+</body>
+</html>
