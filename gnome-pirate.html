@@ -138,6 +138,7 @@
 
   <script>
   const images = document.querySelectorAll('.carousel-img');
+  const thumbs = document.querySelectorAll('.thumb');
   const prevBtn = document.querySelector('.carousel-btn.prev');
   const nextBtn = document.querySelector('.carousel-btn.next');
 
@@ -145,17 +146,29 @@
 
   function showImage(index) {
     images.forEach(img => img.classList.remove('active'));
+    thumbs.forEach(thumb => thumb.classList.remove('active'));
+
     images[index].classList.add('active');
+    thumbs[index].classList.add('active');
+
+    currentIndex = index;
   }
 
   prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
+    let index = (currentIndex - 1 + images.length) % images.length;
+    showImage(index);
   });
 
   nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
+    let index = (currentIndex + 1) % images.length;
+    showImage(index);
+  });
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener('click', () => {
+      const index = parseInt(thumb.dataset.index);
+      showImage(index);
+    });
   });
 </script>
 
