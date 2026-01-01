@@ -238,6 +238,21 @@ p {
 }
 
 /* =================================================
+   ANIMATIONS SCROLL
+================================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* =================================================
    INDEX – UNE CRÉATION SUR MESURE (CADRE + TAILLES)
 ================================================= */
 
