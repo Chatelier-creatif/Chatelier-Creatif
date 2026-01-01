@@ -394,30 +394,39 @@ footer {
   }
 }
 
-/* ----- CARROUSEL PRODUIT ----- */
+/* ===== CARROUSEL PRODUIT ===== */
 
 .product-detail {
   display: flex;
   gap: 40px;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .product-image {
   position: relative;
-  width: 280px; /* 2x plus petit */
+  width: 280px;       /* image plus petite */
+  height: 280px;      /* IMPORTANT */
+  overflow: hidden;
   flex-shrink: 0;
 }
 
+/* Toutes les images sont cachées */
 .carousel-img {
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
+  object-fit: cover;
   display: none;
   border-radius: 12px;
 }
 
+/* Seulement l'image active est visible */
 .carousel-img.active {
   display: block;
 }
 
+/* Boutons */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -426,19 +435,21 @@ footer {
   color: #fff;
   border: none;
   font-size: 22px;
-  padding: 6px 12px;
-  cursor: pointer;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
 }
 
 .carousel-btn.prev {
-  left: -15px;
+  left: 8px;
 }
 
 .carousel-btn.next {
-  right: -15px;
+  right: 8px;
 }
 
 .carousel-btn:hover {
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
 }
