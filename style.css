@@ -348,6 +348,26 @@ p {
 }
 
 /* =================================================
+   IMAGE ATELIER – AJUSTEMENT GLOBAL
+================================================= */
+
+/* Image atelier (pages À propos, index, etc.) */
+.about-image img,
+.two-columns img {
+  max-width: 280px;   /* ↓ réduction maîtrisée */
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile : encore plus harmonieux */
+@media (max-width: 768px) {
+  .about-image img,
+  .two-columns img {
+    max-width: 220px;
+  }
+}
+
+/* =================================================
    CTA
 ================================================= */
 .cta {
