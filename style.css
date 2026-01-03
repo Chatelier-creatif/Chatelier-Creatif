@@ -336,6 +336,7 @@ p {
   width: 100%;
   max-width: 450px; /* limite la taille totale du bloc image */
   cursor: pointer;
+  position: relative;
 }
 
 /* Image principale */
@@ -413,7 +414,7 @@ p {
 
 /* Boutons */
 .carousel-btn {
-  position: absolute;
+  position: absolute; /* positionné par rapport à .product-image */
   top: 50%;
   transform: translateY(-50%);
   background: rgba(0,0,0,0.6);
@@ -429,11 +430,11 @@ p {
 }
 
 .carousel-btn.prev {
-  left: 8px;
+  left: 5px; /* proche du bord gauche de l’image */
 }
 
 .carousel-btn.next {
-  right: 8px;
+  right: 5px; /* proche du bord droit de l’image */
 }
 
 .carousel-btn:hover {
