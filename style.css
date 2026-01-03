@@ -354,11 +354,46 @@ p {
 
 /* Thumbnails */
 .carousel-thumbs {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  gap: 6px;
-  max-height: 120px; /* limite stricte */
-  overflow: hidden;
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+  max-width: 100%;
+  padding-bottom: 6px;
+}
+
+.carousel-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-thumbs::-webkit-scrollbar-thumb {
+  background: #d6cfc4;
+  border-radius: 10px;
+}
+
+.thumb {
+  flex: 0 0 auto;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.thumb:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumb.active {
+  opacity: 1;
+  outline: 2px solid #c3b6a5;
 }
 
 .carousel-thumbs img {
