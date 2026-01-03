@@ -122,9 +122,10 @@
           et choisir ensemble le point relais le plus proche de chez vous.
         </p>
 
+        <!-- Prix + bouton Etsy côte à côte -->
         <div class="purchase-wrapper">
-          <p class="price">À partir de 20,00 €</p>
-          <a href="https://www.etsy.com/fr/shop/LeChaTelierCreatif" target="_blank" class="btn-etsy">
+          <p class="price">25,00 €</p>
+          <a href="https://www.etsy.com/fr/listing/4384524714/beely-le-gnome-abeille-bee-happy?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_16&logging_key=1ed520c328739e5b0978c035789ab1eeeee9c105%3A4384524714" target="_blank" class="btn-etsy">
             Commander sur Etsy
           </a>
         </div>
@@ -132,21 +133,107 @@
 
     </div>
   </section>
+  
+<!-- DANS LE MÊME THÈME -->
+<section class="related fade-in">
+  <div class="related-inner">
+  <h2>Dans le même thème 🐝</h2>
+  <p class="related-subtitle">
+    Si Beely vous a fait craquer, ces créations devraient aussi vous plaire…
+  </p>
 
+  <div class="related-grid">
+
+    <a href="gnome-champi.html" class="product-card">
+        <img src="images/gnomes/gnome_champi.jpeg" alt="Les Gnomes champignon">
+        <h3>Les Gnomes champignon</h3>
+        <span class="btn-discover">Découvrir</span>
+      </a>
+
+    <a href="gnome-epouvantail.html" class="product-card">
+        <img src="images/gnomes/gnome_epouvantail.jpeg" alt="Strawly le gnome épouvantail">
+        <h3>Strawly le Gnome Épouvantail</h3>
+        <span class="btn-discover">Découvrir</span>
+      </a>
+
+    <a href="gnome-a-personnaliser.html" class="related-card">
+      <img src="images/gnomes/gnome-a-personnaliser.jpeg" alt="Gnome Papillon fait main">
+      <h3>Gnome Papillon</h3>
+      <p>Léger, féerique et plein de fantaisie.</p>
+      </a>
+    </div>
+  </div>
+</section>
+  
   <!-- CTA -->
   <section class="cta fade-in">
-    <h2>Une banderole sur mesure ?</h2>
-    <p>
-      Envie d’un thème précis, d’un personnage ou d’une couleur particulière ?
-      Je crée votre <strong>banderole personnalisée faite main</strong> selon vos envies.
-    </p>
-    <a href="me-contacter.html" class="btn">Créer ma banderole personnalisée</a>
+    <h2>Envie d’un gnome sur mesure ?</h2>
+    <p>Choisissez un thème, un univers ou un personnage et je créerai votre <strong>gnome personnalisé</strong> fait main, unique et original.</p>
+    <a href="me-contacter.html" class="btn">Créer mon gnome personnalisé</a>
   </section>
 
   <!-- FOOTER -->
   <footer>
     <p>© Le Cha'Telier Créatif – Créations artisanales personnalisées faites main en France.</p>
   </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">×</span>
+    <img class="lightbox-img" src="" alt="">
+  </div>
+
+  <!-- SCRIPT GLOBAL -->
+  <script>
+    // ===== Animation scroll =====
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fade => observer.observe(fade));
+
+    // ===== Carrousel produit =====
+    const images = document.querySelectorAll('.carousel-img');
+    const thumbs = document.querySelectorAll('.thumb');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let currentIndex = 0;
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove('active'));
+      thumbs.forEach(thumb => thumb.classList.remove('active'));
+      images[index].classList.add('active');
+      thumbs[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    prevBtn.addEventListener('click', () => showImage((currentIndex - 1 + images.length) % images.length));
+    nextBtn.addEventListener('click', () => showImage((currentIndex + 1) % images.length));
+    thumbs.forEach(thumb => thumb.addEventListener('click', () => showImage(parseInt(thumb.dataset.index))));
+
+    // ===== Lightbox =====
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => lightbox.style.display = 'none');
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) lightbox.style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>
