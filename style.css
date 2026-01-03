@@ -478,6 +478,97 @@ p {
 }
 
 /* =================================================
+   SECTION – DANS LE MÊME THÈME
+================================================= */
+
+.related {
+  padding: 80px 8%;
+  text-align: center;
+}
+
+.related h2 {
+  margin-bottom: 10px;
+}
+
+.related-subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 45px;
+}
+
+/* Grille des cartes */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Carte individuelle */
+.related-card {
+  background-color: #ffffff;
+  border-radius: 22px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover premium */
+.related-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 45px rgba(0,0,0,0.14);
+}
+
+/* Image */
+.related-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 auto 16px;
+  transition: transform 0.4s ease;
+}
+
+.related-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Titres */
+.related-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.related-card:hover h3 {
+  color: #c97c5d;
+}
+
+/* Texte */
+.related-card p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* =================================================
+   RESPONSIVE – SECTION LIÉE
+================================================= */
+
+@media (max-width: 768px) {
+  .related {
+    padding: 60px 6%;
+  }
+
+  .related-card img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+/* =================================================
    FOOTER
 ================================================= */
 footer {
