@@ -327,16 +327,18 @@ p {
   display: flex;
   gap: 40px;
   align-items: flex-start;
-  flex-wrap: wrap; /* pour mobile, image au-dessus du texte */
+  flex-wrap: wrap; /* pour mobile */
 }
 
 .product-image {
-  position: relative;
+  display: flex;
+  flex-direction: column; /* image principale + vignettes en dessous */
   width: 100%;
-  max-width: 450px; /* limite la taille de l'image principale */
+  max-width: 450px; /* limite la taille totale du bloc image */
   cursor: pointer;
 }
 
+/* Image principale */
 .carousel-img {
   display: none;
   width: 100%;
@@ -350,13 +352,25 @@ p {
   display: block;
 }
 
-/* Thumbnails sous la principale */
+/* Conteneur vignettes scrollable */
+.carousel-thumbs-wrapper {
+  overflow-x: auto; /* scroll horizontal si trop de vignettes */
+  padding-top: 12px;
+}
+
 .carousel-thumbs {
   display: flex;
   gap: 8px;
-  overflow-x: auto; /* scroll si plus de 5 vignettes */
-  padding-top: 12px;
-  width: 100%;
+  flex-wrap: nowrap; /* toutes les miniatures sur une ligne */
+}
+
+.carousel-thumbs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.carousel-thumbs::-webkit-scrollbar-thumb {
+  background: #d6cfc4;
+  border-radius: 10px;
 }
 
 .thumb {
@@ -393,10 +407,9 @@ p {
     gap: 20px;
   }
   .product-image { max-width: 90%; }
-  .carousel-thumbs { max-width: 90%; }
+  .carousel-thumbs-wrapper { max-width: 90%; }
   .thumb { width: 50px; height: 50px; }
 }
-
 /* Boutons */
 .carousel-btn {
   position: absolute;
