@@ -711,6 +711,36 @@ p {
   }
 }
 
+/* ===== MOBILE - CARROUSEL + PRODUIT ===== */
+@media (max-width: 900px) {
+  .product-detail {
+    display: block; /* Passe de flex à bloc pour empiler */
+    gap: 20px;
+    padding: 0 16px;
+  }
+
+  .product-media {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .product-image {
+    max-width: 100%;
+  }
+
+  .carousel-thumbs {
+    justify-content: flex-start; /* pour garder le scroll horizontal */
+    gap: 6px;
+    overflow-x: auto;
+  }
+
+  .product-info {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
+
 /* =================================================
    RESPONSIVE – SECTION LIÉE
 ================================================= */
