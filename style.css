@@ -513,6 +513,22 @@ p {
   }
 }
 
+.about-home {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 /* =================================================
    CTA
 ================================================= */
